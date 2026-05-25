@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gopal Dangi | Personal Website</title>
+
+  <!-- Bootstrap 5 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
+      position:relative;
+    }
+
+    /* Colorful Side Borders */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      top:0;
+      width:8px;
+      height:100%;
+      z-index:999;
+      background:linear-gradient(
+        to bottom,
+        #00f5ff,
+        #7c3aed,
+        #ff0080,
+        #00ff99
+      );
+      animation:borderGlow 5s linear infinite;
+    }
+
+    body::before{
+      left:0;
+    }
+
+    body::after{
+      right:0;
+    }
+
+    @keyframes borderGlow{
+      0%{
+        filter:hue-rotate(0deg);
+      }
+      100%{
+        filter:hue-rotate(360deg);
+      }
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:60px 0;
+      position:relative;
+    }
+
+    .glass-card{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(12px);
+      border-radius:30px;
+      padding:50px;
+      box-shadow:0 10px 40px rgba(0,0,0,0.4);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:8px 18px;
+      border-radius:50px;
+      background:rgba(255,255,255,0.1);
+      color:#00f5ff;
+      font-size:14px;
+      margin-bottom:20px;
+      letter-spacing:1px;
+    }
+
+    h1{
+      font-size:4rem;
+      font-weight:700;
+      margin-bottom:20px;
+      background:linear-gradient(to right,#00f5ff,#8b5cf6,#ff0080);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .description{
+      color:#cbd5e1;
+      font-size:1.1rem;
+      line-height:1.9;
+      margin-bottom:35px;
+    }
+
+    .hero-img{
+      width:100%;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.5);
+      transition:0.4s;
+    }
+
+    .hero-img:hover{
+      transform:scale(1.03);
+    }
+
+    .section-title{
+      font-size:1.5rem;
+      margin-bottom:25px;
+      font-weight:600;
+    }
+
+    .service-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:22px;
+      padding:30px;
+      transition:0.4s;
+      height:100%;
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+      border-color:#00f5ff;
+      box-shadow:0 10px 25px rgba(0,245,255,0.15);
+    }
+
+    .service-icon{
+      font-size:2.2rem;
+      margin-bottom:18px;
+      color:#00f5ff;
+    }
+
+    .service-title{
+      font-size:1.2rem;
+      font-weight:600;
+      margin-bottom:12px;
+    }
+
+    .service-text{
+      color:#cbd5e1;
+      font-size:0.96rem;
+    }
+
+    .social-links{
+      margin-top:40px;
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .social-btn{
+      text-decoration:none;
+      color:white;
+      padding:14px 24px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .social-btn:hover{
+      transform:translateY(-4px);
+      color:white;
+    }
+
+    .facebook{
+      background:#1877f2;
+    }
+
+    .instagram{
+      background:linear-gradient(
+        45deg,
+        #f09433,
+        #e6683c,
+        #dc2743,
+        #cc2366,
+        #bc1888
+      );
+    }
+
+    .coding-section{
+      margin-top:60px;
+    }
+
+    .coding-img{
+      width:100%;
+      border-radius:20px;
+      transition:0.4s;
+      border:2px solid rgba(255,255,255,0.08);
+    }
+
+    .coding-img:hover{
+      transform:translateY(-6px);
+      box-shadow:0 10px 30px rgba(0,245,255,0.2);
+    }
+
+    footer{
+      margin-top:50px;
+      text-align:center;
+      color:#94a3b8;
+      font-size:0.95rem;
+    }
+
+    @media(max-width:768px){
+
+      h1{
+        font-size:2.8rem;
+      }
+
+      .glass-card{
+        padding:30px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="container">
+    <div class="glass-card">
+
+      <div class="row align-items-center g-5">
+
+        <!-- Left Content -->
+        <div class="col-lg-6">
+
+          <div class="tag">
+            STUDENT • TECH EDUCATOR
+          </div>
+
+          <h1 id="typing"></h1>
+
+          <p class="description">
+            I am here to support your journey towards mastering technology and
+            achieving career success. My role is to guide you through the
+            complexities of IT, making learning engaging, practical, and effective.
+          </p>
+
+          <div class="section-title">
+            What I Offer
+          </div>
+
+          <div class="row g-4">
+
+            <div class="col-md-6">
+              <div class="service-card">
+
+                <div class="service-icon">
+                  <i class="bi bi-code-slash"></i>
+                </div>
+
+                <div class="service-title">
+                  Online Class
+                </div>
+
+                <div class="service-text">
+                  Learn AI, Python, and Django with modern practical lessons
+                  and project-based learning.
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="service-card">
+
+                <div class="service-icon">
+                  <i class="bi bi-laptop"></i>
+                </div>
+
+                <div class="service-title">
+                  Tech Consultation
+                </div>
+
+                <div class="service-text">
+                  Helping organizations become digital and improve their
+                  business through smart technology solutions.
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Social Links -->
+          <div class="social-links">
+
+            <a
+              href="https://www.facebook.com/share/1H1sckfqtS/"
+              target="_blank"
+              class="social-btn facebook"
+            >
+              <i class="bi bi-facebook"></i>
+              Facebook
+            </a>
+
+            <a
+              href="https://www.instagram.com/gopal_dangi_11_?igsh=MXZldG5zeDk5NTVuYg=="
+              target="_blank"
+              class="social-btn instagram"
+            >
+              <i class="bi bi-instagram"></i>
+              Instagram
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- Right Image -->
+        <div class="col-lg-6">
+          <img
+            src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop"
+            class="hero-img"
+            alt="Coding"
+          />
+        </div>
+
+      </div>
+
+      <!-- Extra Coding Images -->
+      <div class="coding-section">
+
+        <div class="row g-4">
+
+          <div class="col-md-4">
+            <img
+              src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?q=80&w=1000&auto=format&fit=crop"
+              class="coding-img"
+              alt=""
+            />
+          </div>
+
+          <div class="col-md-4">
+            <img
+              src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop"
+              class="coding-img"
+              alt=""
+            />
+          </div>
+
+          <div class="col-md-4">
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop"
+              class="coding-img"
+              alt=""
+            />
+          </div>
+
+        </div>
+
+      </div>
+
+      <footer>
+        © 2026 Gopal Dangi • Designed with HTML, CSS, JS & Bootstrap 5
+      </footer>
+
+    </div>
+  </div>
+</section>
+
+<script>
+
+  // Typing Effect
+  const text = "Gopal Dangi";
+  let i = 0;
+
+  function typingEffect() {
+
+    if(i < text.length){
+
+      document.getElementById("typing").innerHTML += text.charAt(i);
+      i++;
+
+      setTimeout(typingEffect,120);
+    }
+
+  }
+
+  window.onload = typingEffect;
+
+</script>
+
+</body>
+</html>
